@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KTM App Download Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #141E30, #243B55);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 30px 20px;
+      background: #1b2838;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    h2 {
+      margin-top: 20px;
+      font-size: 2rem;
+      color: #FFD700;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    .counter {
+      font-size: 1.5rem;
+      margin: 15px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 12px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #ff5722;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: #e64a19;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background: #111;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #FFD700; }
+      to { text-shadow: 0 0 25px #FF4500; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to KTM App Download Page</h1>
+    <p>This is the download page of our multi-tool application <strong>KTM</strong>, specially designed for visually impaired and blind users.  
+    It includes <strong>20+ tools</strong> and <strong>5+ useful games</strong>.</p>
+  </header>
+
+  <h2>KTM App v1.0.2</h2>
+  <p class="counter">Total Downloads: <span id="downloadCount">0</span></p>
+
+  <a href="KTM-v1.0.2.apk" class="btn" onclick="increaseCount()">Download KTM v1.0.2</a>
+  <a href="about.html" class="btn">About Us</a>
+  <a href="contact.html" class="btn">Contact Us</a>
+
+  <footer>
+    © 2025 All rights reserved | KTM Developer Team
+  </footer>
+
+  <script>
+    // Load saved count from localStorage
+    let count = localStorage.getItem("downloadCount") || 0;
+    document.getElementById("downloadCount").innerText = count;
+
+    function increaseCount() {
+      count++;
+      localStorage.setItem("downloadCount", count);
+      document.getElementById("downloadCount").innerText = count;
+    }
+  </script>
+
+</body>
+</html>
